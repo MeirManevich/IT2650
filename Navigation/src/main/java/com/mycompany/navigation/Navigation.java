@@ -35,6 +35,10 @@ public class Navigation {
         System.out.println("Your vehicle has been constructed! "
                 + "You begin in Cleveland with a full tank of gas."
                 + " Where to next?");
+        System.out.println("Your options are:");
+        for(Location a : Destinations){
+            System.out.println(a.getName());
+        }
         
         //now starts the loop that will allow trhe use to travel 
         //until there is no gas
@@ -53,7 +57,6 @@ public class Navigation {
                     next = findloc;
                     break;
                 }
-                
             }
             
             //if none match, print error and continue, will restart loop
@@ -68,13 +71,6 @@ public class Navigation {
                 System.out.println("Traveling to "+next.getName());
                 oop.Fly(next);
                 System.out.println(oop);
-                
-                //refuel option once arrived
-                System.out.println("Would you like to refuel? y/n");
-                if(createVehicle.nextLine().equals("y")){
-                    oop.Refeul();
-                    System.out.println(oop);
-                }
             }
             
             //if in current location, print this message and continue loop
@@ -87,14 +83,19 @@ public class Navigation {
                 System.out.println("You do not have enough gas."
                 + " With your fuel efficiency,"
                 + " it would require "+next.distance(oop.getLoc())/oop.getMpg()
-                + " gallons. You only have " +oop.getFuel()+ " gallons left.");
-                
-                //refuel option once arrived
+                + " gallons. You only have " +oop.getFuel()+ " gallons left."); 
+            }
+            
+            //refuel option
+            if (oop.getLoc().getHasGas() && oop.getFuel()!=oop.getMax()){
                 System.out.println("Would you like to refuel? y/n");
                 if(createVehicle.nextLine().equals("y")){
                     oop.Refeul();
                     System.out.println(oop);
                 }
+            }
+            else if (!oop.getLoc().getHasGas()){
+                System.out.println("This location has no fuel.");
             }
             
         }
