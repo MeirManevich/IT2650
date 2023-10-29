@@ -25,6 +25,9 @@ public class Vehicle {
     public int getFuel(){
         return currentFuel;
     }
+    public int getMax(){
+        return maxFuel;
+    }
     public int getMpg(){
         return mpg;
     }
@@ -39,16 +42,7 @@ public class Vehicle {
     }
     
     public void Refeul() {
-        //only refuel if location has gas and the tank isn't full
-        if (this.loc.getHasGas() && this.currentFuel!=this.maxFuel){
             currentFuel = maxFuel;
-        }
-        else if (!this.loc.getHasGas()){
-            System.out.println("This location has no fuel");
-        }
-        else if (this.currentFuel==this.maxFuel){
-            System.out.println("You already have a full tank!");
-        }
     }
     
     public String toString(){
