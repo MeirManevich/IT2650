@@ -7,10 +7,10 @@ public class Vehicle {
     private int currentFuel;
     private int mpg;
     
-    public Vehicle(Location loc, int maxFuel, int currentFuel, int mpg){
+    public Vehicle(Location loc, int maxFuel, int mpg){
         this.loc = loc;
         this.maxFuel = maxFuel;
-        this.currentFuel = currentFuel;
+        this.currentFuel = maxFuel;
         this.mpg = mpg;
         
     }
