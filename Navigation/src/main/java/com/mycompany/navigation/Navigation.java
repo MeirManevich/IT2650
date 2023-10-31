@@ -30,7 +30,7 @@ public class Navigation {
         int mp =Integer.parseInt(createVehicle.nextLine());
         
         //create a vehicle with those attributes
-        Vehicle oop = new Vehicle(cleveland, max, max, mp);
+        Vehicle oop = new Vehicle(cleveland, max, mp);
         
         System.out.println("Your vehicle has been constructed! "
                 + "You begin in Cleveland with a full tank of gas."
