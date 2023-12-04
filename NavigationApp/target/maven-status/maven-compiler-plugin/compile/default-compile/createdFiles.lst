@@ -1,0 +1,7 @@
+com\mycompany\navigationapp\App.class
+com\mycompany\navigationapp\App$1.class
+com\mycompany\navigationapp\appVehicle.class
+com\mycompany\navigationapp\appVehicle$State.class
+module-info.class
+com\mycompany\navigationapp\SystemInfo.class
+com\mycompany\navigationapp\appLocation.class
